@@ -358,29 +358,44 @@ textRevealStyle.textContent = `
 `;
 document.head.appendChild(textRevealStyle);
 
-// Music Toggle (Optional)
-let audio = null;
+// Music Toggle with birthday.mp3
+const audio = document.getElementById('birthdayMusic');
 const musicToggle = document.getElementById('musicToggle');
 
-if (musicToggle) {
-    musicToggle.addEventListener('click', function() {
-        if (!audio) {
-            // You can add a birthday music file here
-            // audio = new Audio('path-to-birthday-music.mp3');
-            // audio.loop = true;
-            // audio.play();
-            // this.innerHTML = '<span class="music-icon">🔇</span>';
-            alert('Add your favorite birthday music file to enable this feature!');
+if (musicToggle && audio) {
+    // Auto-play attempt (some browsers block this)
+    const playMusic = () => {
+        audio.play().catch(err => {
+            console.log('Autoplay blocked. Click the music button to play.');
+        });
+    };
+
+    // Try to play after user interaction
+    document.addEventListener('click', playMusic, { once: true });
+
+    // Music toggle button
+    musicToggle.addEventListener('click', function(e) {
+        e.stopPropagation();
+        if (audio.paused) {
+            audio.play();
+            this.innerHTML = '<span class="music-icon">🔇</span>';
+            this.style.animation = 'musicPulse 1s ease-in-out infinite';
         } else {
-            if (audio.paused) {
-                audio.play();
-                this.innerHTML = '<span class="music-icon">🔇</span>';
-            } else {
-                audio.pause();
-                this.innerHTML = '<span class="music-icon">🎵</span>';
-            }
+            audio.pause();
+            this.innerHTML = '<span class="music-icon">🎵</span>';
+            this.style.animation = 'none';
         }
     });
+
+    // Add music pulse animation
+    const musicPulseStyle = document.createElement('style');
+    musicPulseStyle.textContent = `
+        @keyframes musicPulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+    `;
+    document.head.appendChild(musicPulseStyle);
 }
 
 // Smooth Scroll for Anchor Links
