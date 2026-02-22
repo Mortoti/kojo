@@ -528,6 +528,10 @@ body {
     padding: 8rem 2rem;
 }
 
+#encouragement .content-title {
+    color: var(--cream);
+}
+
 .chapter-marker.light .chapter-number {
     background: linear-gradient(135deg, var(--gold-primary), var(--gold-light));
     -webkit-background-clip: text;
