@@ -3,129 +3,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Happy Valentine's Day, MJ! 💛</title>
+    <title>Happy Birthday Dad - From Kojo 🎂</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <!-- Animated Background -->
-        <div class="background-animation">
-            <div class="sunshine"></div>
-            <div class="floating-element heart-1">💛</div>
-            <div class="floating-element heart-2">🌟</div>
-            <div class="floating-element heart-3">✨</div>
-            <div class="floating-element heart-4">💫</div>
-            <div class="floating-element heart-5">🌺</div>
+    <!-- Particles Background -->
+    <div id="particles-container"></div>
+
+    <!-- Hero Section -->
+    <section id="hero" class="section">
+        <div class="light-rays"></div>
+        <div class="hero-content">
+            <div class="date-badge" data-aos="fade-down">
+                <span class="date-day">23</span>
+                <span class="date-month">February</span>
+            </div>
+            <h1 class="hero-title" data-aos="zoom-in" data-aos-delay="300">
+                <span class="title-line">Happy Birthday</span>
+                <span class="title-line emphasis">Dad</span>
+            </h1>
+            <div class="hero-subtitle" data-aos="fade-up" data-aos-delay="600">
+                <p>A Celebration of the Greatest Man I Know</p>
+            </div>
+            <div class="from-signature" data-aos="fade-up" data-aos-delay="900">
+                <p>From Your Son, <span class="signature-name">Kojo</span></p>
+            </div>
+            <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="1200">
+                <div class="scroll-arrow">↓</div>
+                <p>Scroll to continue</p>
+            </div>
         </div>
+    </section>
 
-        <!-- Main Content -->
-        <div class="content-wrapper">
-            <!-- Opening Card -->
-            <div class="card opening-card">
-                <div class="card-header">
-                    <div class="date-badge">February 14, 2026</div>
-                </div>
-                <div class="card-body">
-                    <h1 class="main-greeting">
-                        <span class="greeting-line">Happy</span>
-                        <span class="greeting-line highlight">Valentine's Day</span>
-                    </h1>
-                    <div class="name-display">
-                        <span class="to-text">To</span>
-                        <span class="name-emphasis">MJ</span>
-                        <span class="real-name">(Nora)</span>
-                    </div>
-                    <div class="decorative-divider">
-                        <span class="divider-icon">💝</span>
-                    </div>
-                </div>
+    <!-- Photo Gallery Section -->
+    <section id="gallery" class="section dark-section">
+        <div class="section-container">
+            <div class="section-header" data-aos="fade-up">
+                <span class="section-label">The Man. The Legend.</span>
+                <h2 class="section-title">My Hero</h2>
             </div>
 
-            <!-- Message Card -->
-            <div class="card message-card">
-                <div class="message-content">
-                    <div class="message-intro">
-                        <p class="intro-text">Hey MJ! 👋</p>
-                    </div>
-
-                    <div class="message-body">
-                        <p>On this special day of love and friendship, I wanted to take a moment to wish you a beautiful Valentine's Day filled with joy, laughter, and all the good vibes you deserve!</p>
-
-                        <p>You're such an amazing person, MJ, and I'm grateful to have you in my life. Your kindness, your smile, and your positive energy make the world a brighter place.</p>
-
-                        <p>May this Valentine's Day remind you of how valued and appreciated you are—not just today, but every single day. I hope it's filled with sweet moments, wonderful surprises, and everything that makes you happy!</p>
-
-                        <p class="blessing-text">Wishing you love, light, and endless blessings, today and always. 🌟</p>
-                    </div>
-
-                    <div class="wishes-section">
-                        <h3 class="wishes-title">My Wishes For You:</h3>
-                        <div class="wishes-grid">
-                            <div class="wish-item">
-                                <div class="wish-icon">💖</div>
-                                <div class="wish-text">Joy in every moment</div>
-                            </div>
-                            <div class="wish-item">
-                                <div class="wish-icon">✨</div>
-                                <div class="wish-text">Dreams that come true</div>
-                            </div>
-                            <div class="wish-item">
-                                <div class="wish-icon">🌈</div>
-                                <div class="wish-text">Endless reasons to smile</div>
-                            </div>
-                            <div class="wish-item">
-                                <div class="wish-icon">🌟</div>
-                                <div class="wish-text">Love that surrounds you</div>
-                            </div>
-                            <div class="wish-item">
-                                <div class="wish-icon">🌺</div>
-                                <div class="wish-text">Peace in your heart</div>
-                            </div>
-                            <div class="wish-item">
-                                <div class="wish-icon">💫</div>
-                                <div class="wish-text">Blessings in abundance</div>
-                            </div>
+            <div class="photo-showcase">
+                <!-- Photo 1 Frame -->
+                <div class="photo-frame frame-left" data-aos="fade-right" data-aos-delay="200">
+                    <div class="frame-decoration top-left"></div>
+                    <div class="frame-decoration top-right"></div>
+                    <div class="frame-decoration bottom-left"></div>
+                    <div class="frame-decoration bottom-right"></div>
+                    <div class="photo-container">
+                        <img id="dadPhoto1" src="dad1.jpg" alt="Dad Photo 1" class="dad-photo">
+                        <div class="photo-overlay">
+                            <p class="photo-caption">Forever My Inspiration</p>
                         </div>
                     </div>
+                    <div class="frame-glow"></div>
+                </div>
 
-                    <div class="quote-section">
-                        <div class="quote-box">
-                            <p class="quote-text">"The best kind of friendships are those that bring warmth to your heart and light to your life."</p>
-                        </div>
-                    </div>
-
-                    <div class="closing-message">
-                        <p>Have an absolutely wonderful Valentine's Day, MJ! You deserve all the happiness in the world. 💛</p>
+                <!-- Center Decorative Element -->
+                <div class="center-ornament" data-aos="zoom-in" data-aos-delay="400">
+                    <div class="ornament-circle">
+                        <div class="ornament-icon">👑</div>
+                        <div class="ornament-text">King</div>
                     </div>
                 </div>
-            </div>
 
-            <!-- Signature Card -->
-            <div class="card signature-card">
-                <div class="signature-content">
-                    <div class="heart-decoration">
-                        <span class="heart-burst">💛 ✨ 💛 ✨ 💛</span>
+                <!-- Photo 2 Frame -->
+                <div class="photo-frame frame-right" data-aos="fade-left" data-aos-delay="600">
+                    <div class="frame-decoration top-left"></div>
+                    <div class="frame-decoration top-right"></div>
+                    <div class="frame-decoration bottom-left"></div>
+                    <div class="frame-decoration bottom-right"></div>
+                    <div class="photo-container">
+                        <img id="dadPhoto2" src="dad2.jpg" alt="Dad Photo 2" class="dad-photo">
+                        <div class="photo-overlay">
+                            <p class="photo-caption">My Greatest Teacher</p>
+                        </div>
                     </div>
-                    <div class="signature-text">
-                        <p class="warmth-line">With warm wishes and appreciation,</p>
-                        <p class="signature-name">Nana Kwadwo</p>
-                    </div>
-                    <div class="final-note">
-                        <p>Happy Valentine's Day! 🌟</p>
-                    </div>
+                    <div class="frame-glow"></div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Interactive Elements -->
-        <button class="surprise-button" onclick="triggerSurprise()">
-            <span class="button-icon">🎉</span>
-            <span class="button-text">Click for a surprise!</span>
-        </button>
-    </div>
+    <!-- Gratitude Section -->
+    <section id="gratitude" class="section">
+        <div class="parallax-bg"></div>
+        <div class="section-container">
+            <div class="gratitude-content">
+                <div class="chapter-marker" data-aos="fade-down">
+                    <span class="chapter-number">01</span>
+                    <span class="chapter-name">Thank You</span>
+                </div>
+
+                <div class="content-block" data-aos="fade-up" data-aos-delay="200">
+                    <h2 class="content-title">For Everything You've Done</h2>
+                    <div class="gratitude-grid">
+                        <div class="gratitude-card" data-aos="flip-left" data-aos-delay="300">
+                            <div class="card-icon">💙</div>
+                            <h3>Your Care</h3>
+                            <p>From the moment I was born, you've cared for me with a love that knows no bounds. Every sacrifice, every late night, every worry—you carried it all with grace and strength.</p>
+                        </div>
+
+                        <div class="gratitude-card" data-aos="flip-left" data-aos-delay="450">
+                            <div class="card-icon">🧠</div>
+                            <h3>Your Wisdom</h3>
+                            <p>Your advice has shaped who I am today. Every lesson, every story, every word of guidance has been a treasure I carry with me. You taught me how to think, how to live, how to be a man.</p>
+                        </div>
+
+                        <div class="gratitude-card" data-aos="flip-left" data-aos-delay="600">
+                            <div class="card-icon">🛡️</div>
+                            <h3>Your Protection</h3>
+                            <p>You've been my shield, my protector, my safe harbor. In every storm, you stood strong. You gave me the courage to face the world because I knew you always had my back.</p>
+                        </div>
+
+                        <div class="gratitude-card" data-aos="flip-left" data-aos-delay="750">
+                            <div class="card-icon">💪</div>
+                            <h3>Your Strength</h3>
+                            <p>Your resilience inspires me every day. You've shown me what it means to push through challenges, to never give up, to keep fighting for what matters. You are my definition of strength.</p>
+                        </div>
+
+                        <div class="gratitude-card" data-aos="flip-left" data-aos-delay="900">
+                            <div class="card-icon">❤️</div>
+                            <h3>Your Love</h3>
+                            <p>Above all, thank you for your unconditional love. You've loved me through my mistakes, celebrated my victories, and believed in me when I doubted myself. Your love is my foundation.</p>
+                        </div>
+
+                        <div class="gratitude-card" data-aos="flip-left" data-aos-delay="1050">
+                            <div class="card-icon">🌟</div>
+                            <h3>Everything</h3>
+                            <p>Words can never fully capture my gratitude. You've given me life, love, guidance, and purpose. You are everything a father should be and more. Thank you, Dad. For everything.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Encouragement Section -->
+    <section id="encouragement" class="section dark-section">
+        <div class="section-container">
+            <div class="chapter-marker light" data-aos="fade-down">
+                <span class="chapter-number">02</span>
+                <span class="chapter-name">Keep Pushing</span>
+            </div>
+
+            <div class="encouragement-content" data-aos="fade-up" data-aos-delay="200">
+                <h2 class="content-title">You've Got This, Dad</h2>
+
+                <div class="message-blocks">
+                    <div class="message-block" data-aos="fade-right" data-aos-delay="300">
+                        <div class="block-number">01</div>
+                        <div class="block-content">
+                            <h3>We Need You</h3>
+                            <p>Dad, your journey isn't over. We still need you—your wisdom, your strength, your presence. The family still needs its pillar. Your legacy is still being written, and we're here to support you every step of the way.</p>
+                        </div>
+                    </div>
+
+                    <div class="message-block" data-aos="fade-left" data-aos-delay="500">
+                        <div class="block-number">02</div>
+                        <div class="block-content">
+                            <h3>You're Not Alone</h3>
+                            <p>Every burden you carry, you don't have to carry alone. We're here. We're in this together. Whatever challenges lie ahead, we face them as a family. Your strength has held us up—now let us hold you up too.</p>
+                        </div>
+                    </div>
+
+                    <div class="message-block" data-aos="fade-right" data-aos-delay="700">
+                        <div class="block-number">03</div>
+                        <div class="block-content">
+                            <h3>Keep Fighting</h3>
+                            <p>You've taught me to never give up, and I'm reminding you of your own words. Keep pushing, Dad. Keep fighting. The world still needs what you have to offer. We still need what you have to offer.</p>
+                        </div>
+                    </div>
+
+                    <div class="message-block" data-aos="fade-left" data-aos-delay="900">
+                        <div class="block-number">04</div>
+                        <div class="block-content">
+                            <h3>We're Proud of You</h3>
+                            <p>Everything you've accomplished, everything you've overcome, everything you've built—we see it all, Dad. We're so proud of you. And we're excited to see what else you'll achieve. This is just the beginning of another great chapter.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="encouragement-quote" data-aos="zoom-in" data-aos-delay="1100">
+                    <div class="quote-mark">"</div>
+                    <p class="quote-text">You've carried us this far. Now let us walk beside you. Together, we're unstoppable.</p>
+                    <div class="quote-attribution">— Your Family</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final Tribute Section -->
+    <section id="tribute" class="section">
+        <div class="tribute-overlay"></div>
+        <div class="section-container">
+            <div class="tribute-content" data-aos="zoom-in">
+                <div class="tribute-badge">
+                    <span class="badge-icon">🎂</span>
+                </div>
+
+                <h1 class="tribute-title">
+                    <span class="tribute-line">Happy Birthday,</span>
+                    <span class="tribute-line big">Dad</span>
+                </h1>
+
+                <div class="tribute-message">
+                    <p class="tribute-paragraph">You are the greatest man I know. Not because of what you've achieved, but because of who you are. Your character. Your integrity. Your heart.</p>
+
+                    <p class="tribute-paragraph">Today, we celebrate you. Your life. Your love. Your legacy.</p>
+
+                    <p class="tribute-paragraph highlight">May this year bring you joy, peace, and all the blessings you deserve. May you continue to inspire us, guide us, and lead us.</p>
+
+                    <p class="tribute-paragraph">We love you more than words can say.</p>
+                </div>
+
+                <div class="final-signature">
+                    <p class="signature-line">Forever Grateful,</p>
+                    <p class="signature-name-final">Kojo</p>
+                    <div class="signature-decoration">
+                        <span class="decoration-symbol">✦</span>
+                        <span class="decoration-symbol">✦</span>
+                        <span class="decoration-symbol">✦</span>
+                    </div>
+                </div>
+
+                <div class="birthday-year">
+                    <p>February 23, 2026</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <!-- Celebration Canvas -->
     <canvas id="celebrationCanvas"></canvas>
+
+    <!-- Music Toggle (Optional) -->
+    <button id="musicToggle" class="music-toggle" aria-label="Toggle music">
+        <span class="music-icon">🎵</span>
+    </button>
 
     <script src="script.js"></script>
 </body>
