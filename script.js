@@ -363,19 +363,83 @@ const audio = document.getElementById('birthdayMusic');
 const musicToggle = document.getElementById('musicToggle');
 
 if (musicToggle && audio) {
-    // Auto-play attempt (some browsers block this)
-    const playMusic = () => {
-        audio.play().catch(err => {
-            console.log('Autoplay blocked. Click the music button to play.');
-        });
+    let hasInteracted = false;
+
+    // Show a friendly prompt to play music
+    const showMusicPrompt = () => {
+        if (!hasInteracted) {
+            const prompt = document.createElement('div');
+            prompt.style.cssText = `
+                position: fixed;
+                top: 20px;
+                left: 50%;
+                transform: translateX(-50%);
+                background: linear-gradient(135deg, #D4AF37, #B8860B);
+                color: #0A1128;
+                padding: 1rem 2rem;
+                border-radius: 50px;
+                font-family: 'Montserrat', sans-serif;
+                font-size: 1rem;
+                font-weight: 600;
+                box-shadow: 0 10px 30px rgba(212, 175, 55, 0.5);
+                z-index: 10000;
+                cursor: pointer;
+                animation: promptBounce 2s ease-in-out infinite;
+            `;
+            prompt.innerHTML = '🎵 Click here to play birthday music! 🎵';
+
+            const bounceStyle = document.createElement('style');
+            bounceStyle.textContent = `
+                @keyframes promptBounce {
+                    0%, 100% { transform: translateX(-50%) translateY(0); }
+                    50% { transform: translateX(-50%) translateY(-10px); }
+                }
+            `;
+            document.head.appendChild(bounceStyle);
+
+            prompt.addEventListener('click', () => {
+                audio.play();
+                musicToggle.innerHTML = '<span class="music-icon">🔇</span>';
+                musicToggle.style.animation = 'musicPulse 1s ease-in-out infinite';
+                hasInteracted = true;
+                prompt.remove();
+            });
+
+            document.body.appendChild(prompt);
+
+            // Auto-remove after 10 seconds
+            setTimeout(() => {
+                if (!hasInteracted) {
+                    prompt.style.transition = 'opacity 0.5s';
+                    prompt.style.opacity = '0';
+                    setTimeout(() => prompt.remove(), 500);
+                }
+            }, 10000);
+        }
     };
 
-    // Try to play after user interaction
-    document.addEventListener('click', playMusic, { once: true });
+    // Show prompt after 2 seconds
+    setTimeout(showMusicPrompt, 2000);
+
+    // Try to play on first user interaction
+    const attemptPlay = () => {
+        if (!hasInteracted) {
+            audio.play().then(() => {
+                musicToggle.innerHTML = '<span class="music-icon">🔇</span>';
+                musicToggle.style.animation = 'musicPulse 1s ease-in-out infinite';
+                hasInteracted = true;
+            }).catch(() => {
+                // Silently fail, user needs to click music button
+            });
+        }
+    };
+
+    document.addEventListener('click', attemptPlay, { once: true });
 
     // Music toggle button
     musicToggle.addEventListener('click', function(e) {
         e.stopPropagation();
+        hasInteracted = true;
         if (audio.paused) {
             audio.play();
             this.innerHTML = '<span class="music-icon">🔇</span>';
@@ -510,47 +574,6 @@ function triggerBigCelebration(x, y) {
             }).onfinish = () => particle.remove();
         }, i * 20);
     }
-
-    // Show special message
-    const message = document.createElement('div');
-    message.style.cssText = `
-        position: fixed;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%) scale(0);
-        background: linear-gradient(135deg, #D4AF37, #B8860B);
-        padding: 3rem 4rem;
-        border-radius: 30px;
-        box-shadow: 0 30px 80px rgba(212, 175, 55, 0.5);
-        z-index: 10001;
-        text-align: center;
-        border: 5px solid #F4E4C1;
-    `;
-
-    message.innerHTML = `
-        <h2 style="font-family: 'Playfair Display', serif; font-size: 3rem; color: #0A1128; margin-bottom: 1rem;">🎉 SURPRISE! 🎉</h2>
-        <p style="font-family: 'Montserrat', sans-serif; font-size: 1.3rem; color: #0A1128;">Happy Birthday to the BEST Dad Ever!</p>
-        <button onclick="this.parentElement.remove()" style="
-            margin-top: 2rem;
-            padding: 1rem 3rem;
-            background: #0A1128;
-            border: none;
-            border-radius: 50px;
-            color: #D4AF37;
-            font-family: 'Montserrat', sans-serif;
-            font-size: 1.1rem;
-            font-weight: 600;
-            cursor: pointer;
-            box-shadow: 0 10px 30px rgba(10, 17, 40, 0.3);
-        ">Thank You! 👑</button>
-    `;
-
-    document.body.appendChild(message);
-
-    setTimeout(() => {
-        message.style.transition = 'transform 0.6s cubic-bezier(.34,1.56,.64,1)';
-        message.style.transform = 'translate(-50%, -50%) scale(1)';
-    }, 100);
 }
 
 // Initialize Everything
